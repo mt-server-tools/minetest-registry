@@ -2,6 +2,8 @@
 
 A simple barebones API for querying a player profile, banning, unbanning, and storing arbitrary data.
 
+The `web` fodler only exposes the API ; implementation of database connectivity should be done in `lib` to further modularize.
+
 ## Format
 
 The result data should be returned as JSON
