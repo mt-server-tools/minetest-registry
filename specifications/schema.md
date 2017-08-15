@@ -1,6 +1,6 @@
 # Backend schema
 
-I want to keep the schema simple.
+I want to keep the schema simple - as such, I am just trying to solve a general case. The artifacts system is used for setting server and player specific infromation, which can be used by any application leveraging the library.
 
 ## Notes
 
@@ -16,7 +16,7 @@ The description is for display purposes. The name is a shortname that allows que
 
 Each player has an account ; the email is not stored - instead it is hashed. Registries are likely not going to be administerd by professionals with security in mind, so we do not want it to become an easy trove of proven identities, thewhich could be associated with players, whose age groups can sometimes be inferred whilst lurking in the chat channel.
 
-Passwords are obviouslly hashed; the choice here is a SHA-512 which should be sufficient for our purposes and sufficiently future-proof. The hash should be salted with the playername.
+Passwords are obviously hashed; the choice here is a SHA-512 which should be sufficient for our purposes and sufficiently future-proof. The hash should be salted with the playername.
 
 **Sessions**
 
@@ -28,7 +28,7 @@ An artifact is simply some arbitrary data stored on the server. Before storage, 
 
 Artifacts can be associated with players, servers or both. These can be data schematics, play times, achievements - anything. A display message can be stored as the artifact's "meta-info", to be separate from the payload.
 
-Web applications built to leverage the registry can use this data as they wish.
+Web applications built to leverage the registry can use this data as they wish, for example for storing an extended bio, or an avatar - etc.
 
 ## Objects
 
@@ -48,7 +48,7 @@ Web applications built to leverage the registry can use this data as they wish.
 	varchar(32) playername INDEXED -- actual player name
 	char(128) h_pass -- sha512
 	char(32) h_mail -- md5
-	
+	bool confirmed
 
 	
 	sessions
