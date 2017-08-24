@@ -5,9 +5,7 @@ include_once "config.php";
 
 include_once "handle-error.php";
 
-header("Content-type: text/json");
-
-$conn = dbconnect($CFG_database, $CFG_username, $CFG_password);
+header("Content-type: text/lua");
 
 $action = $_GET['action'];
 
